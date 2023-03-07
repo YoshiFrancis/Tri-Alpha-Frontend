@@ -1,8 +1,13 @@
+import "./Post.css"
+
 const Post = ({ post }) => {
     return (
-        <div>
-            <h1>{post}</h1>
+        <div id="card">
+            <h1>Topic : Not Known</h1>
+            <h2>Post by user</h2>
+            <p>{post}</p>
         </div>
+        
     )
 }
 
