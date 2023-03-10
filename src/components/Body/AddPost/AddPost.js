@@ -3,7 +3,7 @@ import AddPostForm from "./AddPostForm/AddPostForm";
 import { useState } from "react"
 
 
-const AddPost = ({ setPostList, postList }) => {
+const AddPost = ({ addPost}) => {
     const [show, setShow] = useState(false);
     const [buttonText, setButtonText] = useState("Add A Post");
 
@@ -21,7 +21,7 @@ const AddPost = ({ setPostList, postList }) => {
             </form>
             
         
-        {show && <AddPostForm setPostList={setPostList} postList={postList}/>}
+        {show && <AddPostForm addPost={addPost} />}
 
         </div>
     )

@@ -1,5 +1,50 @@
+@keyframes button-hover {
+    0% {background-color: blue; width: 12.5%; height: 100%; z-index: 0;}
+    50% {background-color:  aqua; width: 15%; height: 115%; z-index: 1;}
+    100% {background-color: blue; width: 12.5%; height: 100%; z-index: 0;}
+}
+
 #header-body {
     background-color: purple;
     color: white;
     height: 10em;
+    border: 5px yellow none;
+    position: relative;
 }
+
+#nav-bar {
+    border: 5px white none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+}
+
+.person-nav {
+    background-color: yellow;
+    height: 100%;
+    width: 12.5%;
+    border: 1px pink none
+}
+
+.person-nav > button {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100%;
+}
+
+.person-nav > button:hover {
+    position: absolute;
+    background-color: aqua;
+    animation-name: button-hover;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+

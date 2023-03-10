@@ -3,12 +3,14 @@ import Body from "./components/Body/Body"
 import Footer from "./components/Footer/Footer";
 
 import "./App.css"
-
+import postService from './services/posts'
 function App() {
+
+  
   return (
     <>
-      <Header text="Yoshi" />
-      <Body />
+      <Header />
+      <Body postService={postService}/>
       <Footer />
     </>
     
@@ -16,4 +18,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
