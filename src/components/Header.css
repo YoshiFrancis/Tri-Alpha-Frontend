@@ -16,7 +16,7 @@
     border: 5px white none;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: left;
     background-color: black;
     padding: 0;
     position: absolute;
@@ -25,26 +25,18 @@
     height: 20%;
 }
 
-.person-nav {
-    background-color: yellow;
-    height: 100%;
-    width: 12.5%;
-    border: 1px pink none
+.nav-item {
+    background-color: White;
+    border: 5px red solid;
+    width: 10%;
+    text-align: center;
+    font-size: 1.4em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: black;
 }
 
-.person-nav > button {
-    width: 100%;
-    background-color: blue;
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    height: 100%;
-}
-
-.person-nav > button:hover {
-    position: absolute;
-    background-color: aqua;
-    animation-name: button-hover;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+.nav-item:hover {
+    animation: button-hover 3s linear 0s infinite alternate;
 }
 

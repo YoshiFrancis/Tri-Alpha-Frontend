@@ -1,20 +1,35 @@
-import Header from "./components/Heading/Header";
-import Body from "./components/Body/Body"
-import Footer from "./components/Footer/Footer";
+import Header from "./components/Header.js";
+import Body from "./components/Body.js"
+import Footer from "./components/Footer.js";
+import About from "./components/About.js"
+import AddPostForm from "./components/AddPostForm.js";
 
 import "./App.css"
-import postService from './services/posts'
+
+
+import {
+  BrowserRouter, 
+  Routes, 
+  Route,
+} from "react-router-dom";
+
+
 function App() {
 
   
   return (
-    <>
-      <Header />
-      <Body postService={postService}/>
-      <Footer />
-    </>
-    
-
+    <BrowserRouter>
+    <Header />
+      <Routes>
+        <Route exact path='/' element={<Body />} />
+        <Route 
+          exact path="create"
+          element={<AddPostForm />}
+        />
+        <Route exact path='about' element={<About />} />
+      </Routes>
+    <Footer />
+    </BrowserRouter>
   )
 }
 

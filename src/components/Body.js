@@ -1,10 +1,10 @@
-import Post from "./Post/Post";
-import AddPost from "./AddPost/AddPost";
+import Post from "./Post.js";
+import { Link } from 'react-router-dom'
 
-
+import postService from '../services/posts.js'
 import { useEffect, useState } from "react";
 
-const Body = ({postService}) => {
+const Body = () => {
     const [postList, setPostList] = useState([]);
 
     useEffect(() => {
@@ -21,15 +21,8 @@ const Body = ({postService}) => {
         })
       }
 
-      const addPost = async (newPost) => {
-        await postService.create(newPost)
-        let newPostList = await postService.getAll()
-        setPostList(newPostList)
-      }
-
     return (
         <div>
-            <AddPost addPost={addPost}/>
             {postList
                 .map((post) => 
                     <Post removePost={removePost} post={post} key={post.id}/>

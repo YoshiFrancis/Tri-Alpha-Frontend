@@ -1,0 +1,40 @@
+@keyframes changer {
+    0% {background-color: blue;}
+    25% {background-color: aqua;}
+    50% {background-color: aquamarine;}
+    75% {background-color: chartreuse;}
+    100% {background-color: blueviolet;}
+}
+
+@keyframes examples {
+    0% {background-color: blue;}
+    100% {background-color: yellow;}
+}
+#ultimate-container {
+    width: 100%;
+    height: 36em;
+    position: relative;
+    z-index: 2;
+    top: 0;
+    background-color: blue;
+    /*
+    animation-name: changer;
+    animation-duration: 10s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: none;
+    */
+    animation: changer 10s ease-in-out 2s infinite both alternate;
+}
+#form-container {
+    position: relative;
+    background-color: black;
+    border: 5px white solid;
+    width: 50%;
+    height: 100%;
+    top: 10;
+    left: 25%;
+    border-radius: 20%;
+}

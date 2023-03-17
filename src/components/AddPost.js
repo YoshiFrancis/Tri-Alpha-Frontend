@@ -1,4 +1,4 @@
-import AddPostForm from "./AddPostForm/AddPostForm";
+import AddPostForm from "./AddPostForm.js";
 
 import { useState } from "react"
 
@@ -22,7 +22,7 @@ const AddPost = ({ addPost}) => {
             
         
         {show && <AddPostForm addPost={addPost} />}
-
+        
         </div>
     )
 }
