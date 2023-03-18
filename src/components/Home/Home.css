@@ -1,0 +1,33 @@
+#body {
+    background-image: url("../../images/TriaAlpha-flag.PNG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: yellow;
+    height: 100vh;
+}
+
+#left-home-btn {
+    left: 10%;
+    
+}
+
+#right-home-btn {
+    right: 10%;
+}
+
+.home-btn {
+    position: absolute;
+    background-color: yellow;
+    height: 10vh;
+    width: 10vw;
+    top:65%;
+    text-decoration: none;
+    color: brown;
+    border: .25em brown solid;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    border-radius: 10%;
+}
+

@@ -1,10 +1,9 @@
-import Post from "./Post.js";
-import { Link } from 'react-router-dom'
+import Post from "../Post/Post.js";
 
-import postService from '../services/posts.js'
+import postService from '../../services/posts.js'
 import { useEffect, useState } from "react";
 
-const Body = () => {
+const ViewBlogs = () => {
     const [postList, setPostList] = useState([]);
 
     useEffect(() => {
@@ -32,4 +31,4 @@ const Body = () => {
     )
 }
 
-export default Body
+export default ViewBlogs

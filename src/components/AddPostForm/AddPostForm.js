@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./AddPostForm.css" 
 
-import postService from '../services/posts.js'
+import postService from '../../services/posts.js'
 
 const AddPostForm = () => {
     const [newPost, setNewPost] = useState({
