@@ -1,0 +1,22 @@
+#container {
+    position: relative;
+    height: 100%;
+    background-color: lightgoldenrodyellow;
+    height: 75vh;
+}
+
+#box-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 75%;
+    width: 100%;
+}
+
+.box {
+    border: 5px black solid;
+    background-color: white;
+    height: 100%;
+    width: 30%;
+}

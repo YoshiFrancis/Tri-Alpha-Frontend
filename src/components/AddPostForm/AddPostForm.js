@@ -27,7 +27,9 @@ const AddPostForm = () => {
                     })
                     await addPost(newPost)
                 }}>
+                    <label for="topic">Topic:</label>
                     <input
+                    required
                     type = "text"
                     value={newPost.topic}
                     name="topic"
@@ -35,9 +37,10 @@ const AddPostForm = () => {
                         ...newPost,
                         topic: target.value
                     })}
-                    placeholder="Topic"
                     />
+                    <label for="username:">Name</label>
                     <input 
+                    required
                     type="text"
                     value={newPost.username}
                     name="username"
@@ -45,9 +48,10 @@ const AddPostForm = () => {
                         ...newPost, 
                         username: target.value
                     })}
-                    placeholder="Name"
                     />
+                    <label for="info">Blog:</label>
                     <input 
+                    required
                     type="text"
                     value={newPost.info}
                     name="info"
@@ -55,7 +59,6 @@ const AddPostForm = () => {
                         ...newPost,
                         info: target.value
                     })}
-                    placeholder="Input Info here"
                     />
 
                     <button 

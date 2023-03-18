@@ -1,8 +1,16 @@
+import "./About.css"
+
+
 const About = () => {
     return (
-        <div>
+        <div id="container">
             <h1>ABOUT</h1>
-            <p> We are Tri Alpha</p>
+            <div id="box-container">
+                <div className="box">Who Tri-Alpha is</div>
+                <div className="box">Foundations and how we started</div>
+                <div className="box">About website</div>
+            </div>
+            
         </div>
         
     )
