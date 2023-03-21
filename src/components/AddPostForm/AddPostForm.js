@@ -6,29 +6,61 @@ import postService from '../../services/posts.js'
 
 const AddPostForm = () => {
     const [newPost, setNewPost] = useState({
-        topic: 'None',
-        username: 'Anonymous',
-        info: 'None'
+        topic: '',
+        username: '',
+        info: '',
+        image: null,
+        id: null
     });
 
-    const addPost = async (newPost) => {
-        await postService.create(newPost)
-      }
 
+    const [imagePage, setImagePage] = useState(false)
+
+    const addPost = async (newPost) => {
+        let newId = await postService.create(newPost)
+        return newId
+      }
+    
+    if (imagePage) return (
+        <div className="ultimate-container">
+            <div className="form-container">
+            <form 
+                action={"http://localhost:3001/api/posts/create"}
+                method="post"
+                encType="multipart/form-data"
+                >
+                    <label htmlFor="image">Image or Video</label>
+                    <input type="file" name="image" />
+                    <input type="hidden" name="id" value={newPost.id} />
+                    <button  type="submit">Submit Post</button>
+            </form>
+            <button type="button" onClick={() => setImagePage(false)}>No Photo</button>
+            </div>
+        </div>
+    )
+    // onClick={() => {setNewPost({...newPost, id : null})}}
     return (
-        <div id="ultimate-container">
-            <div id="form-container">
-                <form onSubmit={async (e) => {
+        <div className="ultimate-container">
+            <div className="form-container">
+                <form 
+                encType="multipart/form-data"
+                onSubmit={async (e) => {
                     e.preventDefault();
                     setNewPost({
-                        topic: 'None',
-                        username: 'Anonymous',
-                        info: 'None'
+                        topic: '',
+                        username: '',
+                        info: '',
+                        image: null
                     })
-                    await addPost(newPost)
+                    let newId = await addPost(newPost)
+                    
+                    setNewPost({...newPost, id : newId})
+                    setImagePage(true)
                 }}>
-                    <label for="topic">Topic:</label>
+                    <label htmlFor="topic">Topic:</label>
                     <input
+                    autoFocus
+                    autoComplete="off"
                     required
                     type = "text"
                     value={newPost.topic}
@@ -38,8 +70,9 @@ const AddPostForm = () => {
                         topic: target.value
                     })}
                     />
-                    <label for="username:">Name</label>
+                    <label htmlFor="username">Name</label>
                     <input 
+                    autoComplete='on'
                     required
                     type="text"
                     value={newPost.username}
@@ -49,8 +82,9 @@ const AddPostForm = () => {
                         username: target.value
                     })}
                     />
-                    <label for="info">Blog:</label>
+                    <label htmlFor="info">Blog:</label>
                     <input 
+                    autoComplete='off'
                     required
                     type="text"
                     value={newPost.info}
@@ -60,11 +94,12 @@ const AddPostForm = () => {
                         info: target.value
                     })}
                     />
-
                     <button 
                     type="submit">Add Post
                     </button>
                 </form>
+
+                
             </div>
         </div>
         
@@ -72,3 +107,5 @@ const AddPostForm = () => {
 }
 
 export default AddPostForm
+
+
