@@ -7,7 +7,6 @@ const Post = ({ post, removePost }) => {
 
     useEffect(() => {
         if (post.image) setImage(true)
-        console.log(post.image.substring(46))
 
     }, [])
 

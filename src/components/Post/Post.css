@@ -9,8 +9,9 @@ h1 {
     text-align: center;
 }
 
-.example {
-    height: 100%;
-    width: 100%;
-    z-index: 2;
+.image {
+    height: 50%;
+    width: 50%;
+    position: relative;
+    left: 25%;
 }

@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useNavigate, redirect } from 'react-router-dom'
 import "./AddPostForm.css" 
 
 import postService from '../../services/posts.js'
@@ -16,6 +16,8 @@ const AddPostForm = () => {
 
     const [imagePage, setImagePage] = useState(false)
 
+    const navigate = useNavigate()
+
     const addPost = async (newPost) => {
         let newId = await postService.create(newPost)
         return newId
@@ -30,11 +32,19 @@ const AddPostForm = () => {
                 encType="multipart/form-data"
                 >
                     <label htmlFor="image">Image or Video</label>
-                    <input type="file" name="image" />
+                    <input type="file" name="image" required/>
                     <input type="hidden" name="id" value={newPost.id} />
-                    <button  type="submit">Submit Post</button>
+                    <button  type="submit" onClick={(e) => {
+                        e.preventDefault()
+                        navigate('../blogs')
+                    }}>Submit Post</button>
             </form>
-            <button type="button" onClick={() => setImagePage(false)}>No Photo</button>
+            <button type="button" onClick={() => {
+                setImagePage(false)
+                console.log("HGHELLO")
+                navigate("../blogs")
+            }
+                }>No Photo</button>
             </div>
         </div>
     )
