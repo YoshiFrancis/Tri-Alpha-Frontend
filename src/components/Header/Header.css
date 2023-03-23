@@ -1,15 +1,17 @@
 @keyframes button-hover {
-    0% {background-color: blue; width: 12.5%; height: 100%; z-index: 0;}
-    50% {background-color:  aqua; width: 15%; height: 115%; z-index: 1;}
-    100% {background-color: blue; width: 12.5%; height: 100%; z-index: 0;}
+    0% {background-color: blue; color: white}
+    50% {background-color:  aqua; color: black;}
+    100% {background-color: blue; color: white;}
 }
 
 #header-body {
     background-color: lightgoldenrodyellow;
     color: black;
-    height: 25vh;
+    height: 10vh;
     border: 5px yellow none;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 #nav-bar {
@@ -17,50 +19,67 @@
     display: flex;
     flex-direction: row;
     justify-content: left;
-    background-color: black;
+    background-color: lightgoldenrodyellow;
     padding: 0;
+    overflow: hidden;
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 20%;
+    right: 0;
+    width: 70%;
+    height: 8vh;
+    top: 1vh;
+    
 }
 
 #header-text {
     color: black;
-    font-size: 15vh;
+    font-size: 6vh;
+    top: 1vh;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    position: absolute;
+    left: 14vw;
+    text-overflow: clip;
 }
 
 #left-logo {
     left: 5%;
 }
 
-#right-logo {
-    right: 5%;
+#border {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    height: 5%;;
 }
 
 
 .logo-holder {
     position: absolute;
-    height: 15vh;
+    height: 8vh;
     width: 7vw;
     background-image: url('../../images/TriAlpha-logo.PNG');
     background-repeat:no-repeat;
-    background-size: 7vw;
+    background-size: contain;
     background-position: center;
-    border-radius: 20%;
-    top: 2.5vh;
+    border-radius: 20px;
+    top: 1vh;
 }
 
 .nav-item {
-    background-color: White;
-    border: 5px red solid;
-    width: 10%;
+    background-color: lightgoldenrodyellow;
+    border: 5px white solid;
+    width: 20%;
     text-align: center;
-    font-size: 1.4em;
+    font-size: 3vh;
+    text-overflow: clip;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-decoration: none;
     color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+
 }
 
 .nav-item:hover {

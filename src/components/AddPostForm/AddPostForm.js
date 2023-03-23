@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, redirect } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import "./AddPostForm.css" 
 
 import postService from '../../services/posts.js'
@@ -48,7 +48,6 @@ const AddPostForm = () => {
             </div>
         </div>
     )
-    // onClick={() => {setNewPost({...newPost, id : null})}}
     return (
         <div className="ultimate-container">
             <div className="form-container">
